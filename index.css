@@ -1,0 +1,550 @@
+/* Reset CSS by Amaka Ndukwu */
+
+/* making use of :where to allow for low specificity making it easy to override */
+
+
+/* 1. border-box for box model */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 2. remove default margin 
+padding is optional but i do this because of lists*/
+
+:where(:not(dialog)) {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. great for in-page linking */
+@media(prefers-reduced-motion:no-preference) {
+    :where(html) {
+        scroll-behavior: smooth;
+    }
+}
+
+/* 4. line height and text rendering improvement */
+:where(html) {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 5. ensure full viewport height */
+:where(html, body) {
+    min-block-size: 100%;
+}
+
+/* 6. improve line wrapping */
+:where(h1, h2, h3,
+    h4, h5, h6) {
+    text-wrap: balance;
+}
+
+:where(p) {
+    text-wrap: pretty;
+}
+
+:where(figure)>:where(figcaption) {
+    text-wrap: balance;
+}
+
+:where(p, h1, h2, h3,
+    h4, h5, h6) {
+    overflow-wrap: break-word;
+}
+
+
+
+/* 7. making media elements block-level */
+:where(img,
+    svg,
+    video,
+    canvas,
+    picture,
+    audio,
+    iframe,
+    embed,
+    object) {
+    display: block
+}
+
+:where(img, svg, video, canvas, picture) {
+    block-size: auto;
+    max-inline-size: 100%
+}
+
+/* 8. inherit font and letter spacing for form controls */
+:where(input,
+    button,
+    textarea,
+    select),
+:where(input[type=file])::-webkit-file-upload-button {
+    font: inherit;
+    letter-spacing: inherit
+}
+
+/* 9. textarea can only resized vertically and will grow to adjust its content */
+:where(textarea) {
+    resize: vertical;
+   field-sizing: content;
+}
+
+/* 10. table */
+:where(table) {
+    width: fit-content;
+    border-collapse: collapse;
+}
+
+:where(pre) {
+    direction: ltr;
+    max-inline-size: max-content;
+    min-inline-size: 0;
+    white-space: pre;
+    writing-mode: lr
+}
+
+:where(a[href],
+    area,
+    button,
+    input:not([type=text],
+        [type=email],
+        [type=number],
+        [type=password],
+        [type=""],
+        [type=tel],
+        [type=url]),
+    label[for],
+    select,
+    summary,
+    [tabindex]:not([tabindex*="-"],
+        pre)) {
+    cursor: pointer
+}
+
+/*  this will disable additional non-standard gestures such as double-tap to zoom*/
+:where(a[href],
+    area,
+    button,
+    input,
+    label[for],
+    select,
+    summary,
+    textarea,
+    [tabindex]:not([tabindex*="-"])) {
+    touch-action: manipulation
+}
+
+
+
+
+@media screen and (min-width: 200px ) and (max-width: 800px ) {
+    .logo-header{
+        /* display: flex;
+        /* justify-content: center; */
+        /* justify-content: space-around;   */
+         width: 30% !important;
+         max-width: 100%;
+          margin-left: 30px;
+          
+       
+    }
+    .flex-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap !important;
+     
+}
+    
+    .about-planet-table-flex {
+        display: none !important;
+    }
+     /* .about-planet-video{
+        width: 70%;
+        max-width:100% ;
+        display: flex;
+        justify-content: space-around;
+    } */
+     .about-planet-table-small-screen{
+        width: 50px !important;
+        max-width: 100%;
+    }
+    .about-planet-text-flex .about-planet-data{
+     display: flex !important;
+     justify-content: center !important;
+     margin-bottom: 10px !important;
+    align-content: space-around;
+    
+    /* flex-basis: 500px; */
+}
+.about-planet{
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+  .about-planet-video {
+width: 80% !important;
+max-width: 100%;
+height: 46 !important;
+opacity: 1;
+border: 1px solid black !important;
+display: flex !important;
+justify-content: space-around !important;
+/* justify-content: space-around; */
+/* border-radius: 10px;
+margin-top: 30px;
+margin-bottom: 50px; */
+
+}
+.about-planet-data{
+        width: 50% !important;
+        max-width: 100%;
+    }
+/* .about-planet-data  {
+    display: flex !important;
+     justify-content: center !important;
+     margin-bottom: 10px !important;
+
+} */
+ .about-planet-form-flex-one{
+    display: flex;
+    justify-content: center;
+    max-width: 100% !important;
+     gap: 10px;
+     flex-direction: column;
+
+ }
+ .about-planet-footer-section-text{
+    width: 50%;
+    max-width: 100%;
+    padding-right: 20px;
+ }
+   .about-planet-form-flex{
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+    }
+    .about-planet-form-flex-one{
+        width: 100%;
+        max-width: 100%;
+       
+        margin-left: 50px;
+    }
+    .about-planet-form-textarea{
+    width: 50px;
+    max-width: 100%;
+    height: auto;
+}
+.about-planet-form-textarea-message{
+    height: 20px;
+}
+    
+
+   }
+   /* .about-planet-table-flex */
+
+   
+
+/* .about-planet, .about-planet-text-flex{
+     display: flex !important;
+     justify-content: center !important;
+     margin-bottom: 10px !important;
+    
+    /* flex-basis: 500px; */
+/* } */
+
+
+
+html, body{
+    height:100vh ;
+}
+
+.logo-header{
+    width: 8%;
+    max-width: 100%;
+    padding-top: 20px;
+    padding-left: 80px;
+    padding-bottom: 20px;
+}
+
+.header-class{
+    background-color: #051540;
+  
+}
+    
+
+
+.about-header{
+    width: 500px;
+    max-width: 100%;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-style: Medium;
+    padding-left: 80px;
+    padding-top: 80px;
+     
+    
+}
+
+body{
+    font-family: "Inter", sans-serif;
+    
+}
+
+.header-image{
+    width: 600px;
+    max-width: 100%;
+    height: 500px;
+    padding-right: 100px;
+    
+
+}
+.flex-header{
+    display: flex;
+    justify-content: space-between;
+     
+}
+
+.header-button{
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: #164BAF;
+    margin-left: 80px;
+    font-weight: 500;
+    font-style: Medium;
+    color: hsl(0, 0%, 100%);
+
+}
+
+.contact-link{
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-left: 10px;
+    font-weight: 500;
+    font-style: Medium;
+    color: hsl(0, 0%, 100%);
+    text-decoration: none;
+}
+.header-button-link{
+    
+    padding-bottom: 50px;
+     
+}
+
+.header-one{
+    margin-bottom: 10px;
+}
+
+/* .about-planet{
+   margin-left: 350px;
+   margin-right: 100px;
+   margin-top: 30px;
+   margin-bottom: 30px;
+} */
+
+.about-planet-data{
+    width: 800px;
+    max-width: 100%;
+}
+.about-planet, .planet-section{
+    padding-top: 50px;
+}
+.about-planet, .about-planet-text-flex{
+     display: flex;
+     justify-content: center;
+     margin-bottom: 30px;
+     font-weight: 500;
+     font-family: Inter;
+     font-style: Medium;
+    /* flex-basis: 500px; */
+}
+.about-planet-video{
+width: 86;
+max-width: 100%;
+height: 86;
+opacity: 1;
+border: 1px solid black;
+border-radius: 10px;
+margin-top: 30px;
+margin-bottom: 50px;
+
+}
+.header-two, .about-planet-text-header{
+   color: #164BAF;
+   text-align: center;
+
+}
+.header-two-data{
+   color: #1274A4;
+
+}
+.about-planetimages{
+    width: 500px;
+}
+
+.about-planet-images-class{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    padding: 70px;
+    
+}
+  
+.about-planet-images{
+    width: 300px;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.about-planet-text{
+    width: 50%;
+    max-width: 100%;
+    font-weight: 500;
+    font-family: Inter;
+    font-style: Medium;
+    
+}
+
+.planet-section{
+    background: #F2F7FF;
+
+
+}
+.about-planet-table{
+   padding: 30px;
+   background-color: #D1E3FF;
+
+}
+td, table, tr, th{
+    border: 2px solid #FFFFFF;
+    
+     
+}
+.about-planet-table-header{
+    padding: 50px;
+    background-color: #D1E3FF;
+}
+thead, th, tbody, td{
+    padding: 10px;
+    
+}
+th{
+   background: #164BAF;
+   
+
+}
+td{
+    background: #F2F7FF;
+    border-radius: 20px solid  #FFFFFF;
+
+}
+.about-planet-table-flex{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-family: Inter;
+    font-style: Medium;
+}
+.about-planet-table-text{
+    width: 700px;
+    max-width: 100%;
+    color: #0F2A44;
+
+}
+table{
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+.about-planet-table-text-header{
+   color: #164BAF;
+   margin-top: 40px;
+   margin-bottom: 10px;
+
+}
+caption{
+    text-align:left ;
+    color: #0F2A44;
+}
+.about-planet-table-header-two{
+       color: #ffffff;
+}
+.about-planet-form-textarea{
+    width: 400px;
+    max-width: 100%;
+    height: 50px;
+}
+.about-planet-form-flex{
+    display: flex;
+   gap: 10px;
+}
+.about-planet-form-flex-one{
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    font-family: Inter;
+    font-style: Medium;
+}
+.about-planet-form-fullname{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.about-planet-form-contact{
+    margin-bottom: 10px;
+}
+
+.about-planet-form-textarea-message{
+    height: 100px;
+    resize: none;
+}
+.about-planet-form-button{
+   background: #164BAF;
+   display: block;
+   padding: 10px;
+   width: 300px;
+   border: 5px solid #164BAF;
+   margin-top: 50px;
+   margin-bottom: 50px;
+  border-radius:15px
+
+}
+.about-planet-footer-section{
+    background-color: #051540;
+    color: #ffffff;
+    font-weight: 200;
+    
+
+}
+.about-planet-footer-section-text{
+    width: 500px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.about-planet-footer-section-data{
+    margin-left: 60px;
+}
+.about-planet-footer-section-link{
+    list-style: none;
+    
+    line-height: 10px;
+}
+.about-planet-footer-section-copyright{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 50px;
+    margin-bottom:15px ;
+}
+/* main{
+    padding: 40px;
+} */
